@@ -5,13 +5,13 @@
     mysql_root_password: ExpenseApp@1
     login_host: mysql.chanakya.blog  
   tasks:
-  - name: install MySQL Server
+  - name: install mysql Server
     ansible.builtin.package:
       name: mysql-server
       state: present
 
   - name: start mysql server
-    anisble.builtin.server:
+    ansible.builtin.server:
       name: mysqld
       state: started
       enabled: yes
