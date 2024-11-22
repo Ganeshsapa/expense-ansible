@@ -12,7 +12,7 @@
       state: started
       enabled: yes
   - name: remove html content directory
-    ansible.buitlin.file:
+    ansible.builtin.file:
       path: /usr/share/nginx/html
       state: absent
   
