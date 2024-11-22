@@ -28,7 +28,7 @@
   
   - name: extract the code
     ansible.builtin.unarchive:
-      src: /tmp/backend.zip
+      src: /tmp/frontend.zip
       dest: /usr/share/nginx/html
       remote_src: yes
 
