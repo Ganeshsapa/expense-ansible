@@ -88,12 +88,12 @@
 
   - name: install nodejs
     ansible.builtin.package:
-      name: nodejs
-      # name: {{ item }}
+      # name: nodejs
+      name: {{ item }}
       state: present
-    # loop:
-    # - nodejs
-    # - mysql
+      loop:
+        - nodejs
+        - mysql
 
   - name: create expense user
     ansible.builtin.user:
@@ -131,9 +131,9 @@
       login_password: "{{ mysql_root_password }}"
       login_host: "{{ login_host }}"
       target: /app/schema/backend.sql
-      state: dump
-      #state: import
-      name: all
+      # state: dump
+      state: import
+      # name: all
       #name: all
 
   - name: daemon reload
