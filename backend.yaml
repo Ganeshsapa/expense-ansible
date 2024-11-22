@@ -17,9 +17,20 @@
     ansible.builtin.user:
       name: expense
 
-  # - name: create app directory
-  #   ansible.builtin.file:
-  #     path: /app
-  #     stat: directory
+  - name: create app directory
+    ansible.builtin.file:
+      path: /app
+      stat: directory
+
+  - name: dowload the backend code
+    ansible.builtin.get_url:
+      url:  https://expens-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+      dest: /tmp/backend.zip
+  
+  - name: extract the code
+    ansible.builtin.unarchive:
+      src: /tmp/backend.zip
+      dest: /app
+  
 
 
