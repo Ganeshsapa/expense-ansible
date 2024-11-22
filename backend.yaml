@@ -88,8 +88,8 @@
 
   - name: install nodejs
     ansible.builtin.package:
-      name: nodejs
-      # name: {{ item }}
+      # name: nodejs
+      name: "{{ item }}"
       state: present
       loop:
         - nodejs
