@@ -141,3 +141,11 @@
       daemon_reload: true
       state: restarted
       name: backend
+
+    # - name: daemon reload
+    # ansible.builtin.systemd_service:
+    #   daemon_reload: true
+    #   state: restarted
+    #   name: backend
+#     TASK [daemon reload] ***********************************************************************************************************
+# fatal: [backend.chanakya.blog]: FAILED! => {"changed": false, "msg": "Error loading unit file 'backend': org.freedesktop.systemd1.BadUnitSetting \"Unit backend.service has a bad unit file setting.\""}
