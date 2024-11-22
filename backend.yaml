@@ -6,22 +6,22 @@
     login_host: mysql.chanakya.blog  
   tasks:
    - name: ansible to install pymysql
-      ansible.builtin.pip:
+     ansible.builtin.pip:
         name:
           - PyMySQL
       executable: pip3.9
    - name: disable defualt nodejs
-      ansible.builtin.command: dnf module disable nodejs -y
+     ansible.builtin.command: dnf module disable nodejs -y
 
    - name: enable nodejs 20
-      ansible.builtin.command: dnf module enable nodejs:20 -y
+     ansible.builtin.command: dnf module enable nodejs:20 -y
 
    - name: install nodejs
-      ansible.builtin.package:
+     ansible.builtin.package:
         name: nodejs
         state: present
    - name: create expense user
-      ansible.builtin.user:
+     ansible.builtin.user:
         name: expense
 
    - name: create app directory
