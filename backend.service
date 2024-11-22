@@ -1,0 +1,11 @@
+[Unit]
+Description = Backend Service
+
+[Serivce]
+User=expense
+Environment=DB_HOST="mysql.chanakya.blog"
+ExecStart=/bin/node /app/index.js
+SyslogIdentifier=Backend
+
+[Install]
+WantedBy=multi-user.target
