@@ -20,6 +20,8 @@
     ansible.builtin.file:
       path: /app
       state: directory
+      # state: directory
+      mode: '0755'
 
   - name: dowload the backend code
     ansible.builtin.get_url:
